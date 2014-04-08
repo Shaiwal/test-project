@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="EmpProject">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+ -->
+<script src="js/angular.min.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<script src="js/empUtil.js"></script>
+<script type="text/javascript">
+/* $(document).on("click", '#getDataBtn', function(e) {
+//	$.getJSON("getEmpName"+$("#empId").val(), function(response) {
+	 $.getJSON("getEmpName.html",{ id: $("#empId").val() }, function(response) {
+		alert(response);
+		
+		//$("#EmpDataDiv").html(response);
+		alert("success"+response.id);
+		$("#specficEmpData").html(" First Name: "+response.firstName + " Last Name: "+ response.lastName + " Salary: "+response.salary);
+	}).done(function() {
+		alert("second success");
+		
+	}).fail(function(err) {
+		alert("error"+err.error);
+	}).always(function() {
+		alert("finished");
+	});
+ 
+		 
+}); */
+</script>
+</head>
+<body>
+	<h3>Employee Sample Page</h3>
+	<div ng-controller="EmpCtrl">
+	<h4>{{content}}</h4>
+	<!-- 	<form> -->
+			<input type="text" ng-model="empIdText" id="empId"
+				placeholder="Enter employee id here" /> <button ng-click="getDatafrmServer()" id="getDataBtn">Get Employee</button>
+				<input type="text" ng-model="content1" id="empId"
+				placeholder="Enter employee id here" />
+		<!-- </form> -->
+		<div ng-if="loadingIsDone">123456
+		<div ng-bind-html="content"></div>
+		</div>
+	</div>
+</body>
+</html>
